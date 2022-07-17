@@ -13,6 +13,7 @@ namespace TarkovConfigEditor
 {
     public partial class ArmourForm : BaseForm
     {
+        bool isLoading = true;
         public ArmourForm()
         {
             InitializeComponent();
@@ -29,6 +30,7 @@ namespace TarkovConfigEditor
 
         private void cbxArmourList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            isLoading = true;
             var armour = (Armour)cbxArmourList.SelectedItem;
             txtClass.Text = armour._props.armorClass;
             txtDurability.Text = armour._props.Durability.ToString();
@@ -37,6 +39,7 @@ namespace TarkovConfigEditor
             chkProtectsRightArm.Checked = armour._props.armorZone.Contains("RightArm");
             chkProtectsChest.Checked = armour._props.armorZone.Contains("Chest");
             chkProtectsStomach.Checked = armour._props.armorZone.Contains("Stomach");
+            isLoading = false;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -52,6 +55,8 @@ namespace TarkovConfigEditor
 
         private void chkProtectsArea_CheckedChanged(object sender, EventArgs e)
         {
+            if (isLoading)
+                return;
             List<string> headSegments = new List<string>();
             if (chkProtectsLeftArm.Checked)
                 headSegments.Add("LeftArm");

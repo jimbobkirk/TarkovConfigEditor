@@ -72,5 +72,17 @@ namespace TarkovConfigEditor
             armourForm.ShowDialog();
             LoadAll();
         }
+
+        private void btnTrading_Click(object sender, EventArgs e)
+        {
+            TradingForm armourForm = new TradingForm();
+            armourForm.Show();
+        }
+
+        private void btnMagazines_Click(object sender, EventArgs e)
+        {
+            MagazinesForm armourForm = new MagazinesForm();
+            armourForm.Show();
+        }
     }
 }

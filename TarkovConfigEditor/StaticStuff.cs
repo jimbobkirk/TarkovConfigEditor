@@ -17,5 +17,7 @@ namespace TarkovConfigEditor
         public static List<Character> characters;
         public static Locale locale;
         public static List<Quest> quests;
+        public static Gameplay gameplay;
+        public static List<Magazines> magazines;
     }
 }

@@ -92,6 +92,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="MagazinesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MagazinesForm.Designer.cs">
+      <DependentUpon>MagazinesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SaveAndLoad.cs" />
@@ -103,13 +109,21 @@
       <DependentUpon>ServerFolderEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="StaticStuff.cs" />
+    <Compile Include="TarkovClasses\Gameplay.cs" />
     <Compile Include="TarkovClasses\Helmet.cs" />
     <Compile Include="TarkovClasses\Armour.cs" />
     <Compile Include="TarkovClasses\Backpack.cs" />
     <Compile Include="TarkovClasses\Character.cs" />
     <Compile Include="TarkovClasses\LessWeightItems.cs" />
     <Compile Include="TarkovClasses\Locale.cs" />
+    <Compile Include="TarkovClasses\Magazines.cs" />
     <Compile Include="TarkovClasses\QuestMap.cs" />
+    <Compile Include="TradingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TradingForm.Designer.cs">
+      <DependentUpon>TradingForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,6 +142,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MagazinesForm.resx">
+      <DependentUpon>MagazinesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -139,6 +156,9 @@
     </Compile>
     <EmbeddedResource Include="ServerFolderEdit.resx">
       <DependentUpon>ServerFolderEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TradingForm.resx">
+      <DependentUpon>TradingForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

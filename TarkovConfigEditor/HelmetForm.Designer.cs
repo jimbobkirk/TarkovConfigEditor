@@ -197,7 +197,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cbxArmourList);
             this.Name = "HelmetForm";
-            this.Text = "HelmetForm";
+            this.Text = "Helmet";
             this.ResumeLayout(false);
             this.PerformLayout();
 

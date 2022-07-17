@@ -184,7 +184,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cbxArmourList);
             this.Name = "ArmourForm";
-            this.Text = "ArmourForm";
+            this.Text = "Armour";
             this.ResumeLayout(false);
             this.PerformLayout();
 

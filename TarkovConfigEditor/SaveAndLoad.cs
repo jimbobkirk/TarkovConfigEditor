@@ -42,6 +42,8 @@ namespace TarkovConfigEditor
             StaticStuff.quests = QuestMap.LoadQuests();
             StaticStuff.armour = Serialiser.Deserialise<List<Armour>>(LoadFile("\\db\\items\\Armor.json"));
             StaticStuff.helmet = Serialiser.Deserialise<List<Helmet>>(LoadFile("\\db\\items\\Headwear.json"));
+            StaticStuff.magazines = Serialiser.Deserialise<List<Magazines>>(LoadFile("\\db\\items\\Magazine.json"));
+            StaticStuff.gameplay = Serialiser.Deserialise<Gameplay>(LoadFile("\\user\\configs\\gameplay.json"));
             StaticStuff.characters = new List<Character>();
             foreach (string file in Directory.GetDirectories(BaseServerPath + "\\user\\profiles"))
             {
@@ -57,6 +59,22 @@ namespace TarkovConfigEditor
         public static void SaveBackpack()
         {
             Save(BackpackPath, Serialiser.Serialise<List<Backpack>>(StaticStuff.backpack));
+        }
+
+        public static void SaveMagazines()
+        {
+            //fix for item 610720f290b75a49ff2e5e25
+            //foreach (var item in StaticStuff.magazines)
+            //{
+            //    if (item._type == "Node")
+            //        item._props = new object();
+            //}
+            Save("\\db\\items\\Magazine.json", Serialiser.Serialise<List<Magazines>>(StaticStuff.magazines));
+        }
+
+        public static void SaveGameplay()
+        {
+            Save("\\user\\configs\\gameplay.json", Serialiser.Serialise<Gameplay>(StaticStuff.gameplay));
         }
 
         public static void SaveArmour()

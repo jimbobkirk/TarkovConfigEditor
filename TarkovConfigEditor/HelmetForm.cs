@@ -13,6 +13,7 @@ namespace TarkovConfigEditor
 {
     public partial class HelmetForm : BaseForm
     {
+        bool isLoading = true;
         public HelmetForm()
         {
             InitializeComponent();
@@ -29,6 +30,7 @@ namespace TarkovConfigEditor
 
         private void cbxArmourList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            isLoading = true;
             var armour = (Helmet)cbxArmourList.SelectedItem;
             txtClass.Text = armour._props.armorClass;
             txtDurability.Text = armour._props.Durability.ToString();
@@ -38,6 +40,7 @@ namespace TarkovConfigEditor
             chkProtectsEars.Checked = armour._props.headSegments.Contains("Ears");
             chkProtectsEyes.Checked = armour._props.headSegments.Contains("Eyes");
             chkProtectsJaws.Checked = armour._props.headSegments.Contains("Jaws");
+            isLoading = false;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -52,6 +55,8 @@ namespace TarkovConfigEditor
 
         private void chkProtectsAreas_CheckedChanged(object sender, EventArgs e)
         {
+            if (isLoading)
+                return;
             List<string> headSegments = new List<string>();
             if (chkProtectsTop.Checked)
                 headSegments.Add("Top");

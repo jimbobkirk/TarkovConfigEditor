@@ -83,7 +83,7 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtServerLoction);
             this.Name = "ServerFolderEdit";
-            this.Text = "ServerFolderEdit";
+            this.Text = "Server Location";
             this.ResumeLayout(false);
             this.PerformLayout();
 
